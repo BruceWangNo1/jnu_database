@@ -42,7 +42,7 @@ git clone https://github.com/BruceWangNo1/jnu_database.git
 
 NPM Dependencies Installation
 ````
-cd jnu_database & npn install
+cd jnu_database & npm install
 ````
 
 BOWER Denpendecies Installation
@@ -77,6 +77,7 @@ Start Server
 
 ````
 cd .. & node server.js
+````
 
 ## Contributing
 
@@ -84,7 +85,7 @@ Contributions to this project are welcome.
 
 ## License
 
-
+GNU GENERAL PUBLIC LICENSE
 
 ## Project Information
 
