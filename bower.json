@@ -1,0 +1,17 @@
+{
+  "name": "jnu",
+  "description": "JNU Student Information Database",
+  "main": "server.js",
+  "authors": [
+    "Bruce Wang"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "www.pressureandtime.com",
+  "private": true,
+  "dependencies": {
+    "angular-route": "^1.5.3",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.5",
+    "angular-resource": "^1.5.5"
+  }
+}

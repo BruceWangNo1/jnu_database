@@ -1,0 +1,20 @@
+<div ng-controller="signupController" class="container col-md-8 col-md-offset-4 jumbotron">
+	<section class="col-md-6">
+		<label class="alert alert-info">By clicking signup, you agree to use the information provided on this site properly without breaking the law or hurting anyone.</label> 
+		<label class="alert alert-danger" ng-bind="error" ng-show="error"></label>
+	</section>
+		
+	<form class="form-sign col-md-6" data-ng-submit="signup()">
+		<h4 class="form-signin-heading">Please sign up</h4>
+		<label for="inputEmail" class="sr-only">Email Address</label>
+		<input type="email" data-ng-model="email" class="form-control" placeholder="Email Address" required>
+		<label class="sr-only">Username</label>
+		<input type="text" data-ng-model="username" class="form-control" placeholder="Username" required >
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input type="password" data-ng-model="password" class="form-control" placeholder="Password: No less than 7 characters." required >
+		<label class="sr-only">Registration Code</label>
+		<input type="text" data-ng-model="registrationCode" class="form-control" placeholder="Registration Code" required >
+		<br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+	</form>
+</div>

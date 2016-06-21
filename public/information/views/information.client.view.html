@@ -1,0 +1,101 @@
+<section data-ng-controller="InformationController" class="jumbotron row" data-ng-show="authentication.user">
+	<div class="col-md-12">
+		<form data-ng-submit="search()" class="form-sign form-inline">
+			<h3>Search (just type anything you know for sure)</h3>
+			<p>
+				<label class="sr-only col">Student ID</label>
+				<input type="text" data-ng-model="input_sid" class="form-control" placeholder="Student ID">
+				<label class="sr-only">Phone Number</label>
+				<input type="text" data-ng-model="input_phone" class="form-control" placeholder="Phone Number">
+				<label class="sr-only">Student Name</label>
+				<input type="text" data-ng-model="input_name" class="form-control" placeholder="Student Name">
+			
+				<button class="btn btn-primary" type="submit">Submit</button>
+				<button class="btn btn-primary" data-ng-click="clear()">Clear</button>
+			</p>
+			<div data-ng-show="error">
+				<strong data-ng-bind="error"></strong>
+			</div>
+		</form>
+		<br>
+		<br>
+	</div>
+	
+	<div class="container col-md-12">
+		<ul class="nav nav-tabs">
+			<li data-ng-show="data.length>1" data-ng-repeat="(property, value) in data" data-ng-class="{active: !property}"><a aria-controls="home" role="tab" data-toggle="tab" data-ng-bind="property+1" data-ng-click="whichData(property)"></a></li>
+		</ul>
+	</div>
+	<div class="container col-md-6">
+		<table class="table table-bordered table-striped">
+			<tbody>
+					<tr>
+						<th scope=row class="col-md-3">学生证号</th><td data-ng-bind="sid"></td>
+					</tr>
+					<tr>
+						<th scope=row>姓名</th><td><span data-ng-bind="name"></span>    (<span data-ng-bind="count"></span> students have the same first name.)</td>
+					</tr>
+					<tr>
+						<th scope=row>专业</th><td data-ng-bind="major"></td>
+					</tr>
+					<tr>
+						<th scope=row>手机</th><td data-ng-bind="phone"></td>
+					</tr>
+					<tr>
+						<th scope=row>平均学分绩点</th><td><span data-ng-bind="gpa"></span> Ranking:(<span data-ng-bind="rank"></span>/<span data-ng-bind="nos"></span>)</td>
+					</tr>
+					<tr>
+						<th scope=row>已修总学分</th><td data-ng-bind="creditEarned"></td>
+					</tr>
+					<tr>
+						<th scope=row>总学分绩点</th><td data-ng-bind="total"></td>
+					</tr>
+					<tr>
+						<th scope=row>地址</th><td data-ng-bind="address"></td>
+					</tr>
+					<tr>
+						<th scope=row>MAC</th><td data-ng-bind="mac"></td>
+					</tr>
+					<tr>
+						<th scope=row>申请入网时间</th><td data-ng-bind="appliedTime"></td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="container col-md-6">
+		<table class="table table-bordered table-striped col-md-5">
+			<tbody>
+					<tr>
+						<th scope=row>入网过期时间</th><td data-ng-bind="expireTime"></td>
+					</tr>
+					<tr>
+						<th scope=row>性别</th><td data-ng-bind="gender"></td>
+					</tr>
+					<tr>
+						<th scope=row>身高</th><td data-ng-bind="height"></td>
+					</tr>
+					<tr>
+						<th scope=row>体重</th><td data-ng-bind="weight"></td>
+					</tr>
+					<tr>
+						<th scope=row>肺活量</th><td data-ng-bind="fhl"></td>
+					</tr>
+					<tr>
+						<th scope=row>50米</th><td data-ng-bind="fiftymeter"></td>
+					</tr>
+					<tr>
+						<th scope=row>坐位体前屈</th><td data-ng-bind="zwtqq"></td>
+					</tr>
+					<tr>
+						<th scope=row>引体向上（男）/仰卧起坐（女）</th><td data-ng-bind="ytxsorywqz"></td>
+					</tr>
+					<tr>
+						<th scope=row>1000米跑（男）/800米跑（女）</th><td data-ng-bind="onekoreighthundredmeter"></td>
+					</tr>
+					<tr>
+						<th scope=row>立定跳远</th><td data-ng-bind="ldty"></td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
