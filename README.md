@@ -99,8 +99,10 @@ Contributions to this project are welcome.
 
 GNU GENERAL PUBLIC LICENSE
 
-## Project Information
+## For More Information
 
 * [JNU Student Information Query Website][] 
+* [PM2 Github Page][]
 
 [JNU Student Information Query Website]: http://query.pressureandtime.com
+[PM2 Github Page]: https://github.com/Unitech/pm2
