@@ -31,7 +31,7 @@ exports.query=function(req, res, next){
         if(rows.length>0){
           functions.getRank(rows, res, connection);
         } else {
-          rows.Name="User does not exist.";
+          rows=[{Name:"User does not exist."}];
           res.json(rows);
         }
       });
@@ -45,7 +45,7 @@ exports.query=function(req, res, next){
         if(rows.length>0){
           functions.getRank(rows, res, connection);
         } else {
-          rows.Name="User does not exist.";
+          rows=[{Name:"User does not exist."}];
           res.json(rows);
         }
       });
