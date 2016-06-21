@@ -30,6 +30,7 @@ JNU student information query database application.
 "bootstrap": "^3.3.6",
 "angular": "^1.5.5",
 "angular-resource": "^1.5.5"
+````
 
 ## Getting Started
 
