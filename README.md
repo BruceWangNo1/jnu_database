@@ -79,6 +79,18 @@ Start Server
 cd .. & node server.js
 ````
 
+## Maintenance
+
+PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks.
+
+````
+npm install pm2 -g
+pm2 start server.js -i 0 --name "service_name"
+pm2 stop service_name
+pm2 delete service_name
+pm2 list
+````
+
 ## Contributing
 
 Contributions to this project are welcome.
