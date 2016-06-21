@@ -8,6 +8,10 @@ JNU student information query database application.
 - P.E. information
 - Mynet Information
 
+## Database E-R Diagram
+
+<img width=710px src="https://github.com/BruceWangNo1/jnu_database/public/database_er_diagram.jpg">
+
 ## Server Side Dependencies
 
 ````
