@@ -13,8 +13,14 @@ exports.query=function(req, res, next){
       ,function(err, rows, result){
         console.log(JSON.stringify(rows[0]));
         //res.json(rows);
-        console.log('SELECT T.SID, T.NAME, @curRank:=@curRank +1 AS rank FROM (SELECT PE.SID, PE.Name, GPA.GPA FROM GPA JOIN PE ON GPA.SID=PE.SID WHERE PE.Major=\''+rows[0].Major+'\''+'AND PE.SID LIKE '+'\''+rows[0].SID.substring(0,4)+'%\''+') as T, (select @curRank:=0) r order by T.GPA DESC');
-        functions.getRank(rows, res, connection);
+        if(rows.length>0){
+          console.log('SELECT T.SID, T.NAME, @curRank:=@curRank +1 AS rank FROM (SELECT PE.SID, PE.Name, GPA.GPA FROM GPA JOIN PE ON GPA.SID=PE.SID WHERE PE.Major=\''+rows[0].Major+'\''+'AND PE.SID LIKE '+'\''+rows[0].SID.substring(0,4)+'%\''+') as T, (select @curRank:=0) r order by T.GPA DESC');
+          functions.getRank(rows, res, connection);
+        } else {
+          rows=[{Name:"User does not exist."}];
+          console.log(rows);
+          res.json(rows);
+        }
       });
   }else if(phone!=null && phone.length==11 && !isNaN(phone)){
     console.log(phone);
@@ -22,7 +28,12 @@ exports.query=function(req, res, next){
       ,function(err, rows, result){
         console.log(JSON.stringify(rows[0]));
         //res.json(rows);
-        functions.getRank(rows, res, connection);
+        if(rows.length>0){
+          functions.getRank(rows, res, connection);
+        } else {
+          rows.Name="User does not exist.";
+          res.json(rows);
+        }
       });
   }else if(name!=null && name.length<5){
     console.log(name);
@@ -31,7 +42,12 @@ exports.query=function(req, res, next){
         console.log(rows.length);
         console.log(rows.toString());
         //res.json(rows);
-        functions.getRank(rows, res, connection);
+        if(rows.length>0){
+          functions.getRank(rows, res, connection);
+        } else {
+          rows.Name="User does not exist.";
+          res.json(rows);
+        }
       });
   }
 }
